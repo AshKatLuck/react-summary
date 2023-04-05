@@ -4,10 +4,10 @@ import NewPost from "./NewPost";
 import { useState } from "react";
 import Modal from "./Modal";
 
-function PostList() {
+function PostList({ modalIsVisible,hideModal}) {
     const [enteredBody, setEnteredBody] = useState("");
     const [author, setAuthor] = useState("");
-    const [modalIsVisible, setModalIsVisible] = useState(true);
+    
     const onBodyChangeHandler = (event) => {
         setEnteredBody(event.target.value);
     }
@@ -16,9 +16,7 @@ function PostList() {
         setAuthor(event.target.value)
     }
 
-    const hideModal = () => {
-        setModalIsVisible(false);
-    }
+    
     return (<>
         { modalIsVisible &&
          <Modal onClose={hideModal}>
@@ -31,7 +29,7 @@ function PostList() {
        
         <ul className={ classes.posts }>
             <Post author={author} body={enteredBody } />
-        <Post author="Asha" body="I likke react now"/>
+            <Post author="Asha" body="I likke react now"/>
         </ul>
     </>)
     
