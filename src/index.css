@@ -18,5 +18,8 @@
 
 body {
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #e6ddf9;
 }
