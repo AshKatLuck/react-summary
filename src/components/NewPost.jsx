@@ -10,6 +10,10 @@ function NewPost(props) {
             <label htmlFor="name">Your Name</label>
             <input type="text" id="name" required onChange={props.onAuthorChange}></input>
         </p>
+        <p className={classes.actions}>
+            <button type="button" onClick={props.onCancel}>Cancel</button>
+            <button type="submit">Submit</button>
+        </p>
     </form>)
 }
 
